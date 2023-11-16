@@ -74,3 +74,12 @@ body {
     display: flex;
     padding-top: 20%;
 }
+
+.img {
+    background-color: #1E1E1E;
+}
+
+.section1 {
+    justify-content: space-around;
+    display: flex;
+}
