@@ -75,11 +75,22 @@ body {
     padding-top: 20%;
 }
 
-.img {
+.section1 {
     background-color: #1E1E1E;
+    display: flex;
+    border-radius: 20px;
+    margin: 50px 40px 10px 50px;
 }
 
-.section1 {
-    justify-content: space-around;
-    display: flex;
+.img img{
+  height: 70%;
+  padding: 70px 0px 20px 20px;
+}
+
+h3 {
+  color: var(--bg);
+  font-size: medium;
+  text-align: center;
+  padding: 100px 50px 10px 0px;
+  font-family: 'Poppins', sans-serif;
 }
