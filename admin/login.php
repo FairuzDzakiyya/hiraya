@@ -1,4 +1,5 @@
 <?php 
+    session_start();
     require_once('../conn.php');
 ?>
 
@@ -49,27 +50,43 @@
                 </div>
             </form>
         </div>
-        <div class="mt-3">
+
+        <div class="mt-3" style="width: 500px">
             <?php 
             if(isset($_POST['loginbtn'])){
                 $username = htmlspecialchars($_POST['username']);
                 $email = htmlspecialchars($_POST['email']);
                 $password = htmlspecialchars($_POST['password']);
 
-                $query = "UPDATE user SET username = '$username', email = '$email', password = '$password' WHERE id = '$id'";
-                $result = mysqli_query($koneksi, $query);
-            
-                // cek apabila data berhasil diupdate ke database
-                if (!$result) {
-                    echo "<br>Data gagal dimasukan ke tabel. Error : " . mysqli_error($koneksi);
+                $query = mysqli_query($koneksi, "SELECT * FROM user WHERE 
+                username='$username'");
+                $countdata = mysqli_num_rows($query);
+                $data = mysqli_fetch_array($query);
+
+                $hashed_password = password_hash($password, PASSWORD_DEFAULT);
+                
+                if($countdata>0){
+                    if (password_verify($password,$hashed_password)) {
+                        $_SESSION['username'] = $data['username'];
+                        $_SESSION['login'] = true;
+                        header('location: index.php');
+                    }
+                    else {
+                    ?>
+                    <div class="alert alert-warning" role="alert">
+                        Password Salah
+                    </div>
+                    <?php
+                    }
                 }
-            
-                // tampilkan alert dan redirect ke halaman daftar-siswa.php
-                echo "<script>
-                alert('Data berhasil dimasukan ke database!');
-                window.location.href = 'login.php' </script>";
-            
-                mysqli_close($koneksi);
+                else{
+                    ?>
+                    <div class="alert alert-warning" role="alert">
+                        Akun tidak tersedia
+                    </div>
+                    <?php
+                }
+
             }
             ?>
         </div>

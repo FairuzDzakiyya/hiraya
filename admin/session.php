@@ -1,6 +1,6 @@
 <?php
     session_start();
-    if($_SESSION['Login']==false){
+    if($_SESSION['login']==false){
         header('location: login.php');
     }
 ?>
