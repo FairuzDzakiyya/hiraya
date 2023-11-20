@@ -1,8 +1,14 @@
-<?php 
-    $koneksi = mysqli_connect("localhost","root","","olshop");
+<?php
+$servername = "localhost";
+$database = "olshop";
+$username = "root";
+$password = "";
 
-    if (mysqli_connect_errno()) {
-        echo "Failed to connect to MySQL: " . mysqli_connect_error();
-        exit();
-      }
+
+$koneksi = mysqli_connect($servername, $username, $password, $database);
+
+if(!$koneksi) {
+    die("Koneksi Gagal: " . mysqli_connect_error());
+}
+
 ?>
