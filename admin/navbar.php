@@ -11,9 +11,9 @@
         <li class="dropdown">
           <a href="#">Koleksi <i class="fa-solid fa-chevron-down"></i></a>
           <div class="dropdown-content">
-            <a href="#">Hoodie</a>
-            <a href="#">Tote Bag</a>
-            <a href="#">Topi</a>
+            <a href="../page/hoodie.php">Hoodie</a>
+            <a href="../page/totebag.php">Tote Bag</a>
+            <a href="../page/topi.php">Topi</a>
         <li class="dropdown">
           <a href="#">Pria <i class="fa-solid fa-chevron-down"></i></a>
           <div class="dropdown-content">
@@ -23,9 +23,9 @@
         <li class="dropdown">
           <a href="#">Wanita <i class="fa-solid fa-chevron-down"></i></a>
           <div class="dropdown-content">
-            <a href="#">Pakaian Wanita</a>
-            <a href="#">Celana Wanita</a>
-            <a href="#">Alas Kaki Wanita</a>
+            <a href="../page/pw.php">Pakaian Wanita</a>
+            <a href="../page/celanawanita.php">Celana Wanita</a>
+            <a href="../page/alaswanita.php">Alas Kaki Wanita</a>
           </div>
         </li>
       </ul>
