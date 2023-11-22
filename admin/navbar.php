@@ -1,38 +1,46 @@
-  <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-<nav class="navbar">
-    <div class="nav">
-      <img src="../img/hiranya.png" alt="" height="45">
-    </div>
-    <div class="nav-menu">
-      <div class="nav-menu1"></div>
-      <ul>
-        <li class="dropdown">
-          <a href="#">Koleksi <i class="fa-solid fa-chevron-down"></i></a>
-          <div class="dropdown-content">
-            <a href="../page/hoodie.php">Hoodie</a>
-            <a href="../page/totebag.php">Tote Bag</a>
-            <a href="../page/topi.php">Topi</a>
-        <li class="dropdown">
-          <a href="#">Pria <i class="fa-solid fa-chevron-down"></i></a>
-          <div class="dropdown-content">
-            <a href="#">Pakaian Pria</a>
-            <a href="#">Celana Pria</a>
-            <a href="#">Alas Kaki Pria</a>
-        <li class="dropdown">
-          <a href="#">Wanita <i class="fa-solid fa-chevron-down"></i></a>
-          <div class="dropdown-content">
-            <a href="../page/pw.php">Pakaian Wanita</a>
-            <a href="../page/celanawanita.php">Celana Wanita</a>
-            <a href="../page/alaswanita.php">Alas Kaki Wanita</a>
-          </div>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item me-4">
+          <a class="nav-link" href="../admin/index.php">Home</a>
+        </li>
+        <li class="nav-item dropdown me-4">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Wanita
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="../page/pw.php">Pakaian Wanita</a></li>
+            <li><a class="dropdown-item" href="../page/rok.php">Rok Wanita</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown me-4">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Pria
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="../page/pria.php">Pakaian Pria</a></li>
+            <li><a class="dropdown-item" href="#">Celana Pria</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown me-4">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Lainnya
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="../page/hoodie.php">Hoodie</a></li>
+            <li><a class="dropdown-item" href="../page/topi.php">Topi</a></li>
+            <li><a class="dropdown-item" href="../page/totebag.php">Totebag</a></li>
+          </ul>
         </li>
       </ul>
+      <form class="d-flex" role="search">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
     </div>
-    <div class="nav-menu">
-      <img src="../img/searchline.png" alt="search">
-      <img src="../img/user.png" alt="user">
-      <img src="../img/cartoutline.png" alt="cartoutline">
-    </div>
-  </nav>
+  </div>
+</nav>  

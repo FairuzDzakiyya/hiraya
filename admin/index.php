@@ -9,26 +9,78 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hiranya</title>
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../font/css/fontawesome.min.css">
 </head>
+
+<style>
+  .kotak {
+    border: solid;
+  }
+
+  .summary-kategori {
+    background-color: #FFD233;
+    border-radius: 15 px;
+  }
+
+  .no-decoration {
+    text-decoration: none;
+  }
+
+.no-decoration:hover {
+  color: blue;
+}
+
+.summary-produk {
+  background-color: #B27984;
+  border-radius: 15px;
+}
+</style>
+
 <body>
-    <?php require "navbar.php"; ?>
-    <div class="barang">
-    <img class="img1" src="../img/hiranya.png" alt="" height="80">
-    <img src="../img/barang.png" alt="" height="500">
-  </div>
-  <div class="section1">
-    <div class="img">
-      <img src="../img/baju.png" alt="">
+  <?php require "navbar.php"; ?>
+  <div class="container mt-5">
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item active" aria-current="page">
+        <i class="fas fa-home"></i>  Home
+      </li>
+    </ol>
+  </nav>
+      <h2>Halo <?php echo $_SESSION['username']; ?></h2>
+
+      <div class="container mt-5"></div>
+      <div class="row">
+        <div class="col-lg-4">
+          <div class="summary-kategori p-3">
+            <div class="row">
+              <div class="col-6">
+                <i class="fas fa-align-justify fa-7x text-black-50"></i>
+              </div>
+              <div class="col-6 text-white">
+                <h3 class="fs-2" >kategori</h3>
+                <p class="fs-4" >4 kategori</p>
+                <p><a href="../page/rok.php" class="text-white no-decoration">Lihat Detail</a></p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 summary-produk p-3">
+            <div class="row">
+              <div class="col-6">
+                <i class="fas fa-box fa-7x text-black-50"></i>
+              </div>
+              <div class="col-6 text-white">
+                <h3 class="fs-2" >produk</h3>
+                <p class="fs-4" >4 produk</p>
+                <p><a href="../page/rok.php" class="text-white no-decoration">Lihat Detail</a></p>
+              </div>
+            </div>
+        </div>
+      </div>
     </div>
-    <h3>Jelajahi gaya Anda dengan koleksi baju terlengkap hanya di Hiranya! Temukan
-      berbagai pilihan fashion terkini yang sesuai dengan selera Anda. Dari gaya kasual
-      hingga formal, kami menyajikan ragam desain eksklusif untuk menonjolkan 
-      kepribadian Anda. Dapatkan pengalaman berbelanja yang tak terlupakan dengan
-      harga terbaik dan kualitas premium. Pilihlah dari berbagai warna, pola, dan ukuran
-      yang cocok untuk setiap kesempatan. Jadilah trendsetter dengan gaya unik Anda!
-      Kunjungi toko kami sekarang dan temukan kepuasan dalam berbelanja baju
-      berkualitas tinggi dengan banyak pilihan di Hiranya.</h3>
-  </div>
+
+    <script src="../bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../font/js/all.min.js"></script>
 </body>
 </html>
