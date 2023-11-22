@@ -1,6 +1,12 @@
 <?php
     require "session.php";
     require "../conn.php";  
+
+    $queryKategori = mysqli_query($koneksi, "SELECT * FROM kategori");
+    $jumlahKategori = mysqli_num_rows($queryKategori);
+    
+    $queryProduk = mysqli_query($koneksi, "SELECT * FROM produk");
+    $jumlahProduk = mysqli_num_rows($queryProduk);
 ?>
 
 <!DOCTYPE html>
@@ -20,7 +26,7 @@
 
   .summary-kategori {
     background-color: #FFD233;
-    border-radius: 15 px;
+    border-radius: 15px;
   }
 
   .no-decoration {
@@ -51,7 +57,7 @@
 
       <div class="container mt-5"></div>
       <div class="row">
-        <div class="col-lg-4">
+        <div class="col-lg-4 col-md-6 col-12 mb-3">
           <div class="summary-kategori p-3">
             <div class="row">
               <div class="col-6">
@@ -59,23 +65,25 @@
               </div>
               <div class="col-6 text-white">
                 <h3 class="fs-2" >kategori</h3>
-                <p class="fs-4" >4 kategori</p>
+                <p class="fs-4" ><?php echo $jumlahKategori; ?> Kategori</p>
                 <p><a href="../page/rok.php" class="text-white no-decoration">Lihat Detail</a></p>
               </div>
             </div>
           </div>
         </div>
-        <div class="col-lg-4 summary-produk p-3">
+        <div class="col-lg-4 col-md-6 col-12 mb-3">
+          <div class="summary-produk p-3">
             <div class="row">
               <div class="col-6">
                 <i class="fas fa-box fa-7x text-black-50"></i>
               </div>
               <div class="col-6 text-white">
                 <h3 class="fs-2" >produk</h3>
-                <p class="fs-4" >4 produk</p>
+                <p class="fs-4" ><?php echo $jumlahProduk; ?> Kategori</p>
                 <p><a href="../page/rok.php" class="text-white no-decoration">Lihat Detail</a></p>
               </div>
             </div>
+        </div>
         </div>
       </div>
     </div>
