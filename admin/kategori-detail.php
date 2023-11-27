@@ -43,7 +43,7 @@ $data = mysqli_fetch_array($query);
 
             if($data['nama']==$kategori){
                 ?>
-                    <meta http-equiv="refresh" content="0; url=../page/pw.php" />
+                    <meta http-equiv="refresh" content="0; url=kategori.php" />
                 <?php
             }
             else{
@@ -65,7 +65,7 @@ $data = mysqli_fetch_array($query);
                                     Kategori Berhasil Diupdate
                                 </div>
 
-                                <meta http-equiv="refresh" content="2; url=../page/pw.php" />
+                                <meta http-equiv="refresh" content="2; url=kategori.php" />
                                 <?php
                             }
                             else {
@@ -84,7 +84,7 @@ $data = mysqli_fetch_array($query);
                                 Kategori Berhasil Dihapus
                             </div>
 
-                            <meta http-equiv="refresh" content="2; url=../page/pw.php" />
+                            <meta http-equiv="refresh" content="2; url=kategori.php" />
                         <?php
                     }
                     else{
