@@ -11,6 +11,9 @@
         <li class="nav-item me-4">
           <a class="nav-link" href="../admin/index.php">Home</a>
         </li>
+        <li class="nav-item me-4">
+          <a class="nav-link" href="produk.php">Produk</a>
+        </li>
         <li class="nav-item dropdown me-4">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Wanita
