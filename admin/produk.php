@@ -6,6 +6,16 @@
     $jumlahProduk = mysqli_num_rows($query);
 
     $queryKategori = mysqli_query($koneksi, "SELECT * FROM kategori");
+
+    function generateRandomString($length = 10) {
+        $characters = '0123456789abcdefghijklmnopqrstuvwxyz';
+        $charactersLength = strlen($characters);
+        $randomString = '';
+        for($i = 0; $i < $length; $i++) {
+            $randomString .= $characters[rand(0, $charactersLength - 1)];
+        }
+        return $randomString;
+    }
 ?>
 
 <!DOCTYPE html>
@@ -50,11 +60,11 @@
         <form action="" method="post" enctype="multipart/form-data">
             <div>
                 <label for="nama">Nama</label>
-                <input type="text" id="nama" name="nama" class="form-control" autocomplete="off">
+                <input type="text" id="nama" name="nama" class="form-control" autocomplete="off" required>
             </div>
             <div>
                 <label for="kategori">Kategori</label>
-                <select name="kategori" id="kategori" class="form-control"> 
+                <select name="kategori" id="kategori" class="form-control" required>
                     <option value="">Pilih Satu</option>
                     <?php   
                         while($data=mysqli_fetch_array($queryKategori)){
@@ -67,7 +77,7 @@
             </div>
             <div>
                 <label for="harga">Harga</label>
-                <input type="number" class="form-control" name="harga">
+                <input type="number" class="form-control" name="harga" required>
             </div>
             <div>
                 <label for="foto">Foto</label>
@@ -94,6 +104,16 @@
                 $nama = htmlspecialchars($_POST['nama']);
                 $kategori = htmlspecialchars($_POST['kategori']);
                 $harga = htmlspecialchars($_POST['harga']);
+                $detail = htmlspecialchars($_POST['detail']);
+                $ketersediaan_stok = htmlspecialchars($_POST['ketersediaan_stok']);
+
+                $target_dir = "../img/";
+                $nama_file = basename($_FILES["foto"]["name"]);
+                $target_file = $target_dir . $nama_file;
+                $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
+                $image_size = $_FILES["foto"]["size"];
+                $random_name = generateRandomString(20);
+                $new_name = $random_name . "." . $imageFileType;
 
                 if($nama=='' || $kategori=='' || $harga==''){
         ?>
@@ -101,6 +121,47 @@
                         nama, kategori dan harga wajib diisi
                     </div>
         <?php
+                }
+                else{
+                    if($nama_file!=''){
+                        if($image_size > 500000){
+        ?>
+                            <div class="alert alert-warning mt-3" role="alert">
+                                File tidak boleh lebih dari 500 kb
+                            </div>
+        <?php
+                        }   
+                        else{
+                            if($imageFileType!='jpg' && $imageFileType!='png' && $imageFileType!='gif'){
+                                ?>
+                                <div class="alert alert-warning mt-3" role="alert">
+                                    File wajib bertipe jpg atau png atau gif
+                                </div>
+        <?php
+                            }
+                            else{
+                                move_uploaded_file($_FILES["foto"]["tmp_name"], $target_dir . $new_name);
+                            }
+                        }
+                    }
+
+                    // query insert to produk table
+                    $queryTambah = mysqli_query($koneksi, "INSERT INTO produk (kategori_id, nama, harga, 
+                    foto, detail, ketersediaan_stok) VALUES ('$kategori', '$nama', '$harga', 
+                    '$new_name', '$detail', '$ketersediaan_stok')");
+
+                    if($queryTambah){
+        ?>
+                        <div class="alert alert-primary mt-3" role="alert">
+                            Produk Berhasil Tersimpan
+                        </div>
+
+                        <meta http-equiv="refresh" content="2; url=produk.php">;
+        <?php
+                    }
+                    else{
+                        echo mysqli_error($koneksi);
+                    }
                 }
             }
         ?>
