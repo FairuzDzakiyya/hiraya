@@ -9,9 +9,6 @@
           <img src="img/image/hiranya.png" alt="" height="30px">
         </li>
         <li class="nav-item me-4">
-          <a class="nav-link" href="../admin/index.php">Home</a>
-        </li>
-        <li class="nav-item me-4">
           <a class="nav-link" href="produk.php">Produk</a>
         </li>
         <li class="nav-item me-4">
@@ -44,9 +41,6 @@
             <li><a class="dropdown-item" href="../page/topi.php">Topi</a></li>
             <li><a class="dropdown-item" href="../page/totebag.php">Totebag</a></li>
           </ul>
-          <li class="nav-item me-4">
-            <a class="nav-link" href="logout.php">Logout</a>
-          </li>
         </li>
       </ul>
     </div>

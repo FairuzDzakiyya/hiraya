@@ -1,13 +1,49 @@
 :root{
-    --bg: #d9d9d9d9;
+    --bg: #dededed9;
     --font: #000000;
+    --desk: rgb(248, 207, 163);
+}
+
+.wrna {
+    background-color: var(--desk);
 }
 
 .navbar{
     background-color: var(--bg);
-    padding: 30px;
+    padding: 20px;
 }
 
 .nav-item{
     font-family: 'Poppins', sans-serif;
+}
+
+.banner{
+    height: 80vh;
+    background-repeat: no-repeat;
+    background: url(../img/image/bg2.jpg);
+}
+
+.content {
+    background-color: #1E1E1E;
+    height: 95vh;
+}
+
+.konten {
+    align-items: flex-start;
+}
+
+.teks {
+    font-family: 'Poppins', sans-serif;
+    margin-top: 150px;
+}
+
+.search-bar {
+    height: 30vh;
+    background-color: #1E1E1E;
+    box-shadow: 0px 5px 5px #000000;
+}
+
+.search-bar h5 {
+    color: var(--bg);
+    padding-top: 50px;
 }
