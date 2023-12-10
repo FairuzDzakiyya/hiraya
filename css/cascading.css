@@ -19,8 +19,12 @@
 
 .banner{
     height: 80vh;
-    background-repeat: no-repeat;
-    background: url(../img/image/bg2.jpg);
+    background-repeat: no-repeat;   
+    background: linear-gradient(rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.4)), url('../img/image/latar.jpg');
+}
+
+.bg {
+    align-self: start;
 }
 
 .content {
@@ -38,12 +42,54 @@
 }
 
 .search-bar {
-    height: 30vh;
+    padding-top: 10px;
+    height: 35vh;    
     background-color: #1E1E1E;
     box-shadow: 0px 5px 5px #000000;
 }
 
 .search-bar h5 {
     color: var(--bg);
-    padding-top: 50px;
+    padding-top: 60px;
+}
+
+.highlighted-kategori {
+    height: 250px;
+}
+
+.kategori-baju-pria {
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('../img/image/wepik-export-202312100152326D4l.jpeg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+.kategori-baju-wanita {
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('../img/image/cute-woman-bright-hat-purple-blouse-is-leaning-stand-with-dresses-posing-with-package-isolated-background.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+.kategori-celana {
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('../img/image/light-brown-beige-pants-hangers.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+.kategori-topi {
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('../img/image/collection-trucker-hats-with-mesh-back.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+.kategori-hoodie {
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('../img/image/white-hoodie-man-with-green-pants-city.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+.kategori-totebag {
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('../img/image/woman-shopping-with-fabric-tote-bag.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
 }

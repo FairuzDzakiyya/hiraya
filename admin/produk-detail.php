@@ -93,7 +93,7 @@
                         <option value="tersedia">tersedia</option>
                     <?php
                         }
-                    ?>
+                    ?>  
                     </select>
                     </div>
                     <div>
